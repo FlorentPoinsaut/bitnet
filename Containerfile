@@ -11,7 +11,7 @@ RUN python3 utils/codegen_tl2.py --model Llama3-8B-1.58-100B-tokens --BM 256,128
 
 RUN cmake -B build -DBITNET_X86_TL2=ON -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
 
-RUN cmake --build build --target llama-cli --config Release
+RUN cmake --build build --target llama-cli --target llama-server --config Release
 
 COPY ggml-model-i2_s.gguf .
 
